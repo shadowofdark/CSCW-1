@@ -15,7 +15,7 @@ class User extends Password {
     private function get_user_hash($username) {
 
         try {
-            $stmt = $this->_db->prepare('SELECT password, username, memberID FROM members WHERE username = :username');
+            $stmt = $this->_db->prepare('SELECT password, username, memberID FROM mybb_users WHERE username = :username');
             $stmt->execute(array('username' => $username));
 
             return $stmt->fetch();
